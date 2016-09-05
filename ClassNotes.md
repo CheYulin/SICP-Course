@@ -41,7 +41,7 @@
 - Abstraction(define)
 
 ##Eg
-(define a (* 5 5 ))   ; a -> 25 ; (a) error, 25 could not be applied to something
-(define (d) (* 5 5)) ; d -> compound procedure d ;(d)->25
+- (define a (* 5 5 ))   ; a -> 25 ; (a) error, 25 could not be applied to something
+- (define (d) (* 5 5)) ; d -> compound procedure d ;(d)->25
 
 #Second Lecture
