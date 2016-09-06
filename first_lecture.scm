@@ -9,23 +9,22 @@
 ;To Squaring Something
 ;Syntatic Sugar
 (define (square x) (* x x))
-              ;Multipliy it by self
+
 (square 10)
 
 ;Naming
-;Define symbol square2
+;Define symbol square2 ;Make a Procedure
 (define square2
   (lambda (x) (* x x)))
-;Make a Procedure
 
 (square2 10.1)
 (+ (square2 3) (square2 4))
 (square2 (square2 (square2 1001)))
 square2
-;compound procedure
 
 (define (average x y)
   (/ (+ x y) 2))
+(average 1 2)
 
 (define (mean-square x y)
   (average (square2 x)
@@ -33,29 +32,22 @@ square2
 
 (mean-square 3 4)
 
-;abs(x)
+;abs(x); cond usage
 (define (abs x)
-  (cond ((< x 0) (- x))
-  ((= x 0 ) 0)
+  (cond
+  ((< x 0) (- x))
+  ((= x 0) 0)
   ((> x 0) x)))
-        ; Predicate ;Action
+  ; Predicate ;Action
 
-;syntax sugar
-;if
+(abs -1)
+(abs 2)
 
-;square_root x
-(define (try guess x)
-  (if (good-enough? guess x)
-      guess
-      (try (improve guess x)x)))
+;syntax sugar: if exp1 exp2(not true case)
+(define (whether_zero x)
+  (if (= x 0)
+    (display "is zero\n")
+    (display "not zero\n")))
 
-(define (square_root x) try guess x)
-
-(define (improve guess x)
-  （average guess (/ x guess)))
-
-(define (good-enough? guess x)
-  (< (abs (- (square_root)))))
-
-
-;definitin sqrt hash definition of improve/guess/good-enough
+(whether_zero 1)
+(whether_zero 0)
