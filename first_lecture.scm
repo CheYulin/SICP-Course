@@ -24,6 +24,7 @@ square2
 
 (define (average x y)
   (/ (+ x y) 2))
+  
 (average 1 2)
 
 (define (mean-square x y)
