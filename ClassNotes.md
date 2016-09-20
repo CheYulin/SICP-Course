@@ -45,3 +45,96 @@
 - (define (d) (* 5 5)) ; d -> compound procedure d ;(d)->25
 
 #Second Lecture
+##Procedures & Processors
+###Simple
+- Kinds of Expressions
+- Numbers
+- Symbols
+- Lambda Expressions
+- Definitions
+- Conditionals
+- Most important: **Combinations(General)**
+###Substitution Rule
+- eval operator to get Procedure
+- eval operands to get arguments
+- aplly procedure to the arguments
+- copy the body of procedure, substitude arguments supplied
+```scheme
+(sos 3 4)
+(+ (sq 3) (sq 4))
+;now consider *procedure is primitive
+(+ (sq 3) (* 4 4))
+(+ (sql 3) 16)
+(+ (* 3 3) 16)
+(+ 9 16)
+;->25
+```
+
+- conditional
+```scheme
+(if predicate
+  consequent
+  alternative)
+```
+
+- comparison
+```scheme
+;recursive
+(define (+ x y)
+  (if (= x 0)
+      y
+      (+ (1- x) (1+ y))))
+
+(+ 3 4)
+
+;add the one later
+(define (+ x y)
+  (if (= x 0)
+      y
+      (1+ (+ (1- x) y))))
+
+(+ 3 4)
+```
+- comparison(processing)  Iteration vs Recursion
+```zsh
+;Called Linear Iteration
+first one: straight       |t
+(+ 3 4) ->reduce to       |i
+(+ 2 5) ->reduce to       |m
+(+ 1 6) ->reduce to       |e = O(x)
+(+ 0 7)                  
+got 7
+----------------------space=O(1)
+GJS -> 3,4 GJS -> ... final one pass to first one
+
+
+;Called Linear Recursion
+second one: span out and back
+(+ 3 4)                    |t
+(+1 (+ 2 4))               |i
+(+1 (+1 (+ 1 4)))          |m
+(+1 (+1 (+1 (+ 0 4))))     |e = O(x)
+(+1 (+1 (+1 4)))
+(+1 (+1 5))
+(+1 6)
+got 7
+----------------------space=O(x)
+GJS -> GJS ...     ->
+    <-             <-
+```
+
+- fibonacci
+  - e.g, 0 1 1 2 3 5 8 13 21 34 55
+```scheme
+;tree
+;bad implementation/processing, e.g fib5 = fib4 + fib3 where share fib3 twice
+;time complexity=O(fib(n))
+;space complexity=O(n) ,i.e, longest path
+(define (fib n)
+  (if (< n 2)
+    n
+    (+ (fib (- n 1)) (fib (- n 2)))))
+
+(fib 4)
+```
+- hamno-tower-game
