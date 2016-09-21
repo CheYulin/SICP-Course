@@ -31,9 +31,3 @@
     (+ (fib (- n 1)) (fib (- n 2)))))
 
 (fib 4)
-
-;To Do:hamno-tower-game left impl
-(define (move n front to spare)
-  (cond (= n 0) "done")
-  (else
-    (move (1- )))
