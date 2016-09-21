@@ -13,6 +13,10 @@ Structure and Interpretation of Computer Programs
 
 ##Additonal Practice
 - [currying](additional_programs/currying.scm)
+- [syntax-list-usage](additional_programs/list_usage.scm)
+- [syntax-vector-usage](additional_programs/vector_usage.scm)
+- [syntax-loop-do-whole-usage](additional_programs/loop_do_while.scm)
+- [others](additional_programs/other_study.scm)
 
 ##References
 - [SCIP Chinese Translation/Materials](https://github.com/DeathKing/Learning-SICP)

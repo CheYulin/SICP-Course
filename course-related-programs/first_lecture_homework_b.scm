@@ -30,8 +30,26 @@
 
 (move 4 1 2 3)
 
-;look-up-based fibonacci, save the info in list
+
+;Following are all not correct ...
+;iteration-based fib
 (define (fib n)
-  (if (< n 2)
+  (define v (make-vector n -1))
+
+  (vector-ref v (- n 1)))
+
+;look-up-based fibonacci, save the info in list
+(define (fib-loop-up n)
+  (define v (make-vector n -1))
+  (fib n))
+
+(define (fib n)
+    (if (< n 2)
     n
-    (+ (fib (- n 1)) (fib (- n 2)))))
+    (begin
+      (cond (= (vector-ref v (- n 1)) -1)
+          (vector-set! v (- n 1) (+ (fib (- n 1)) (fib (- n 2)))))
+        (vector-ref v (- n 1))
+      )))
+
+(fib-loop-up 4)
