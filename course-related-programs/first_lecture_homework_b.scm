@@ -29,3 +29,9 @@
       (move (1- n) spare to from))))
 
 (move 4 1 2 3)
+
+;look-up-based fibonacci, save the info in list
+(define (fib n)
+  (if (< n 2)
+    n
+    (+ (fib (- n 1)) (fib (- n 2)))))
