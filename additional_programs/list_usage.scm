@@ -29,3 +29,16 @@ y
   (list 1 2)
   (list 3 4)
   (list 5 6))
+
+;others
+(define my_list (cons 1 (cons 2 (cons 3 (cons 4 '())))))
+(car my_list)
+(cdr my_list)
+
+(cddr my_list)
+(if (null? (cddddr my_list))
+  (display "1\n")
+  (display "2\n"))
+
+(list (car my_list))
+(append (cddr my_list) (list (car my_list)))
