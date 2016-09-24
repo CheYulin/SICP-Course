@@ -15,6 +15,7 @@ Structure and Interpretation of Computer Programs
 - [currying](additional_programs/currying.scm)
 - [syntax-list-usage](additional_programs/list_usage.scm)
 - [syntax-vector-usage](additional_programs/vector_usage.scm)
+- [syntax-let-apply-map-usage](additional_programs/proc_variable_binding.scm)
 - [syntax-loop-do-whole-usage](additional_programs/loop_do_while.scm)
 - [others](additional_programs/other_study.scm)
 
