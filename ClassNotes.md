@@ -138,3 +138,29 @@ GJS -> GJS ...     ->
 (fib 4)
 ```
 - hamno-tower-game
+
+##Third Lecture
+###High-Order Functions
+- e.g, function accepts function as arguments
+- with high-order we can only change sum from recursion to iteration without change the `sum_pi`, `sum_int`, `sum_square`
+  - this is decoupling, cool  
+- e.g, `square_root`
+  - y -> (y + x/y)/2
+  - f(sqrt(x)) = sqrt(x)
+  - we are looking forward to a fix-point of function f
+- some functions have that property to iterate to reach the fix-point   
+- g maps y to x/y, 1 to 2, 2 to 1, not converge...
+
+```scheme
+(define (average__damp) f)
+  (define (foo x)
+    (average (f x) x))
+```
+
+- y_{n+1} = y_{n} - frac{f(y_n)}{frac{df}{dy}|_{y=y_n}}  
+- good picture demostration for newton's method
+- first-class citizens
+  - to be named as variables
+  - to be passed as arguments of procedures
+  - to be returned as values of procedures
+  - to be incorporated into data structures
